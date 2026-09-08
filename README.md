@@ -14,8 +14,8 @@
 
 | # | Exercício | Arquivo e linha | O que aparece na tela |
 |---|---|---|---|
-| 1 | Entidade principal | `parte1-dart/bin/models/instrumento.dart:5` | Bloco `[1]` do relatório |
-| 2 | Herança | `parte1-dart/bin/models/instrumento_eletrico.dart:8` | Bloco `[2]` do relatório |
+| 1 | Entidade principal | `parte_1\music_center_pt1\bin\models\instrumento.dart` | Bloco `[1]` do relatório |
+| 2 | Herança | `parte_1\music_center_pt1\bin\models\instrumentoDeCorda.dart` | Bloco `[2]` do relatório |
 | 3 | Composição | `parte1-dart/bin/models/loja.dart:12` | Bloco `[3]` do relatório |
 | 4 | Encapsulamento | `parte1-dart/bin/models/loja.dart:20` | Bloco `[4]` e o total no topo da tela de lista |
 | 5 | Estrutura de tela | `parte2-flutter/lib/screens/home_page.dart:14` | AppBar e corpo da tela inicial |
