@@ -1,15 +1,13 @@
 import 'instrumento.dart';
 
-class Instrumentodecorda extends Instrumento {
+class InstrumentoDeCorda extends Instrumento {
+  final int qtdCordas;
 
-  int? qtdCordas;
-
-  Instrumentodecorda(
-    int id,
-    String nome,
-    double valor,
-    String marca,
-    this.qtdCordas,
-  ) : super(id, nome, valor, marca);
-
+  InstrumentoDeCorda({
+    required id,
+    required nome,
+    required valor,
+    required marca,
+    required this.qtdCordas,
+  }) : super(id: id, nome: nome, valor: valor, marca: marca);
 }

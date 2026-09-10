@@ -1,12 +1,12 @@
 class Instrumento{
 
-  int? id;
-  String? nome;
-  double? valor;
-  String? marca;
+  final int id;
+  final String nome;
+  final double valor;
+  final String marca;
 
 
-  Instrumento(this.id, this.nome, this.valor, this.marca);
+  Instrumento({ required this.id, required this.nome, required this.valor, required this.marca});
 }
 
 
