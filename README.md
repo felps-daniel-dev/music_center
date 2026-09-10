@@ -17,7 +17,7 @@
 | 1 | Entidade principal | `parte_1\music_center_pt1\bin\models\instrumento.dart` | Bloco `[1]` do relatório |
 | 2 | Herança | `parte_1\music_center_pt1\bin\models\instrumentoDeCorda.dart` | Bloco `[2]` do relatório |
 | 3 | Composição | `parte_1\music_center_pt1\bin\models\exposicao.dart` | Bloco `[3]` do relatório |
-| 4 | Encapsulamento | `parte1-dart/bin/models/loja.dart:20` | Bloco `[4]` e o total no topo da tela de lista |
+| 4 | Encapsulamento | `parte_1\music_center_pt1\bin\models\exposicao.dart` | Bloco `[4]` e o total no topo da tela de lista |
 | 5 | Estrutura de tela | `parte2-flutter/lib/screens/home_page.dart:14` | AppBar e corpo da tela inicial |
 | 6 | Cartão | `parte2-flutter/lib/screens/widgets/cartao_instrumento.dart:9` | Cada item da lista |
 | 7 | Lista | `parte2-flutter/lib/screens/home_page.dart:22` | Lista rolável com seis itens |
