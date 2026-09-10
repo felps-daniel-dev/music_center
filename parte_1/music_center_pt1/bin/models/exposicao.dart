@@ -1,7 +1,7 @@
 import 'instrumento.dart';
 
 class Exposicao {
-  List<Instrumento> _instrumentos = [];
+  final List<Instrumento> _instrumentos = [];
 
   Exposicao();
   List<Instrumento> get getInstrumentos => _instrumentos;
