@@ -1,14 +1,14 @@
-import 'package:music_center/models/instrumento.dart';
+import 'package:music_center/models/instrumentoDeCorda.dart';
 
 class Exposicao{
 
-  final List<Instrumento> _instrumentos = [];
+  final List<InstrumentoDeCorda> _instrumentos = [];
 
   Exposicao();
 
-  List<Instrumento> get getInstrumentos => _instrumentos;
+  List<InstrumentoDeCorda> get getInstrumentos => _instrumentos;
 
-  void adicionarInstrumento(Instrumento instrumento){
+  void adicionarInstrumento(InstrumentoDeCorda instrumento){
     _instrumentos.add(instrumento);
   }
 

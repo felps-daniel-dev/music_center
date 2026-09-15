@@ -1,14 +1,14 @@
-import 'instrumento.dart';
+import 'instrumentoDeCorda.dart';
 
 class Exposicao {
-  final List<Instrumento> _instrumentos = [];
+  final List<InstrumentoDeCorda> _instrumentos = [];
 
   Exposicao();
-  List<Instrumento> get getInstrumentos => _instrumentos;
+  List<InstrumentoDeCorda> get getInstrumentos => _instrumentos;
 
   //set setInstrumentos(instru) => this._instrumentos = instru;
 
-  void adicionarInstrumento(Instrumento instrumento) {
+  void adicionarInstrumento(InstrumentoDeCorda instrumento) {
     _instrumentos.add(instrumento);
   }
 

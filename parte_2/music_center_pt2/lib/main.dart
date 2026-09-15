@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_center/models/instrumentoDeCorda.dart';
 
 void main() {
   runApp(const MainApp());
