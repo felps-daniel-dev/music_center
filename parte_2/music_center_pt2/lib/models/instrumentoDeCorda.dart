@@ -8,6 +8,7 @@ class InstrumentoDeCorda extends Instrumento {
     required super.nome,
     required super.valor,
     required super.marca,
+    required super.imagem,
     required this.qtdCordas,
   });
 }
