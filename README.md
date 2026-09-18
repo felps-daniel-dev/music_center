@@ -9,11 +9,6 @@
 - InstrumentoDeCorda
 - Exposicao
 
-<<<<<<< HEAD
-> **Nota sobre Composição (Exercício 3):**  
-- É uma relação de 1:N: uma Exposição pode ter vários instrumentos, mas um instrumento pertence a apenas uma exposição
-=======
-
 > **Nota sobre Composição (Exercício 3):** 
 - É uma relação de 1:n uma Exposição pode ter varios instrumentos mas um instrumento só pode estar em uma exposição
 ---
@@ -32,5 +27,4 @@
 | 8 | Navegação | `parte_2\music_center_pt2\lib\widgets\detalhe_card.dart` | Toque no item abre o detalhe |
 | 9 | Formulário | `parte_2\music_center_pt2\lib\widgets\cadastro.dart` | Tela de cadastro |
 | 10 | Estado | `parte_2\music_center_pt2\lib\main.dart` | Item novo na lista e total atualizado |
-=======
 
