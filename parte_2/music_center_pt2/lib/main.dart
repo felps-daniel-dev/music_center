@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
 
-      // Botão Flutuante para ir à Tela de Cadastro (Exercício 9 e 10)
+      // Botão Flutuante para ir à Tela de Cadastro ex 9 e 10
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
