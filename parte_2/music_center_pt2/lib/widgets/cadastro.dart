@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/instrumento.dart';
+import '../models/instrumentoDeCorda.dart';
 
 class CadastroPage extends StatefulWidget {
   const CadastroPage({super.key});
@@ -9,43 +9,56 @@ class CadastroPage extends StatefulWidget {
 }
 
 class _CadastroPageState extends State<CadastroPage> {
-  // Exercício 9: Três TextEditingControllers para os três campos da tela
+  // Controladores 
   final TextEditingController _nomeController = TextEditingController();
   final TextEditingController _marcaController = TextEditingController();
   final TextEditingController _valorController = TextEditingController();
+  final TextEditingController _cordasController = TextEditingController();
+  final TextEditingController _imagemController = TextEditingController();
 
   @override
   void dispose() {
-    // Descarta os controladores para não vazar memória (requisito citado no trabalho)
     _nomeController.dispose();
     _marcaController.dispose();
     _valorController.dispose();
+    _cordasController.dispose();
+    _imagemController.dispose();
     super.dispose();
   }
 
   void _salvar() {
-    final String nome = _nomeController.text;
-    final String marca = _marcaController.text;
-    final double? valor = double.tryParse(_valorController.text);
+    final String nome = _nomeController.text.trim();
+    final String marca = _marcaController.text.trim();
+    final double? valor = double.tryParse(_valorController.text.replaceAll(',', '.'));
+    final int? qtdCordas = int.tryParse(_cordasController.text);
+    final String imagemUrl = _imagemController.text.trim();
 
-    // Validação simples
-    if (nome.isEmpty || marca.isEmpty || valor == null) {
+    // validacao de campos
+    if (nome.isEmpty || marca.isEmpty || valor == null || qtdCordas == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Preencha todos os campos corretamente!')),
+        const SnackBar(
+          content: Text('Preencha os campos obrigatórios corretamente!'),
+          backgroundColor: Colors.red,
+        ),
       );
       return;
     }
 
-    // Instancia o novo instrumento usando valores padrão para os demais atributos
-    final novoInstrumento = Instrumento(
-      id: DateTime.now().millisecondsSinceEpoch, // Gera um ID dinâmico
+    //  aplica uma imagem genérica padrão
+    final String urlFinal = imagemUrl.isEmpty
+        ? 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300'
+        : imagemUrl;
+
+    // Instancia novo instrumento
+    final novoInstrumento = InstrumentoDeCorda(
+      id: DateTime.now().millisecondsSinceEpoch,
       nome: nome,
       marca: marca,
       valor: valor,
-      imagem: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300', // URL padrão
+      qtdCordas: qtdCordas,
+      imagem: urlFinal,
     );
 
-    // Devolve o objeto novo para a HomePage via Navigator.pop
     Navigator.of(context).pop(novoInstrumento);
   }
 
@@ -57,11 +70,10 @@ class _CadastroPageState extends State<CadastroPage> {
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Campo 1: Nome
             TextFormField(
               controller: _nomeController,
               decoration: InputDecoration(
@@ -71,8 +83,7 @@ class _CadastroPageState extends State<CadastroPage> {
               ),
             ),
             const SizedBox(height: 12),
-            
-            // Campo 2: Marca
+
             TextFormField(
               controller: _marcaController,
               decoration: InputDecoration(
@@ -83,7 +94,6 @@ class _CadastroPageState extends State<CadastroPage> {
             ),
             const SizedBox(height: 12),
 
-            // Campo 3: Valor
             TextFormField(
               controller: _valorController,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
@@ -93,9 +103,30 @@ class _CadastroPageState extends State<CadastroPage> {
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
               ),
             ),
+            const SizedBox(height: 12),
+
+            TextFormField(
+              controller: _cordasController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Quantidade de Cordas',
+                prefixIcon: const Icon(Icons.linear_scale),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              ),
+            ),
+            const SizedBox(height: 12),
+
+            TextFormField(
+              controller: _imagemController,
+              keyboardType: TextInputType.url,
+              decoration: InputDecoration(
+                labelText: 'URL da Imagem',
+                prefixIcon: const Icon(Icons.image),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              ),
+            ),
             const SizedBox(height: 20),
 
-            // Botão de Confirmação
             SizedBox(
               width: double.infinity,
               height: 50,

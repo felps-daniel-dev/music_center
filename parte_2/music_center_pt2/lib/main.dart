@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    
   }
 
   @override
@@ -116,8 +115,7 @@ class _HomePageState extends State<HomePage> {
             MaterialPageRoute(builder: (context) => const CadastroPage()),
           );
 
-          // Exercício 10: Adiciona o item novo no estado e dispara o setState()
-          if (novoItem is InstrumentoDeCorda) {
+          if (novoItem != null && novoItem is InstrumentoDeCorda) {
             setState(() {
               exposicao.adicionarInstrumento(novoItem);
             });
