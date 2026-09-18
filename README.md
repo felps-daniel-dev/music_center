@@ -9,7 +9,7 @@
 - InstrumentoDeCorda
 - Exposicao
 
-> **Nota sobre Composição (Exercício 3):** 
+> **Nota Exercício 3:** 
 - É uma relação de 1:n uma Exposição pode ter varios instrumentos mas um instrumento só pode estar em uma exposição
 ---
 
